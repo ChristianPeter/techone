@@ -99,4 +99,10 @@ run "grunt serve" to test you app!
 
 
 
+But this installation will create quite a mess if you run it in wildfly, because the context root points to the webapp dir and not the /webapp/app.
+So I've decided to rename webapp to webapp_grunt and move the webapp_grunt/app dir to webapp.
+
+You'll have to modify your bower.json : add "appPath" : "../webapp" and the karma config as well
+
+# mvn wildfly:deploy
 
