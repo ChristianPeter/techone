@@ -80,3 +80,23 @@ Business first - start with your core functionallity what your application is su
 don't over complicate thing with configuration. In almost any scenario you won't need this so called flexibility later anyway.
 
 
+
+Okay... let's do client side first :-)
+
+install node.js
+# pacman -S nodejs
+# npm install yo grunt bower -g
+
+goto the webapp dir
+
+# yo angular
+
+if you now run "grunt", you'll get probably a missing dependency. To fix this, install karma-jasmine
+:
+#npm install karma-jasmine --save-dev
+
+run "grunt serve" to test you app!
+
+
+
+
