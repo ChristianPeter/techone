@@ -87,7 +87,9 @@ install node.js
 # pacman -S nodejs
 # npm install yo grunt bower -g
 
-goto the webapp dir
+at src/main create new folder: "webapp_grunt". This will contain our yeoman, grunt bower managed (clientside) webapplication.
+
+goto the webapp_grunt dir
 
 # yo angular
 
@@ -95,14 +97,30 @@ if you now run "grunt", you'll get probably a missing dependency. To fix this, i
 :
 #npm install karma-jasmine --save-dev
 
-run "grunt serve" to test you app!
+
+To run the tests:
+$grunt 
 
 
 
-But this installation will create quite a mess if you run it in wildfly, because the context root points to the webapp dir and not the /webapp/app.
-So I've decided to rename webapp to webapp_grunt and move the webapp_grunt/app dir to webapp.
+run "grunt serve" to test you app in a browser:
+$grunt serve
 
-You'll have to modify your bower.json : add "appPath" : "../webapp" and the karma config as well
 
-# mvn wildfly:deploy
+in order to deploy only the build application to wildfly, we have to change the "dist" path at Gruntfile.js to "../webapp".
 
+$grunt build
+
+willl create this new "dist" (../webapp) directory, which then can be used with wildfly properly!
+
+$ mvn wildfly:deploy
+
+
+
+
+
+I like animation:
+$ bower install angular-animate
+
+and routing:
+$ bower install angular-route

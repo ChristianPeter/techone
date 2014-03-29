@@ -1,7 +1,6 @@
 {
   "name": "webapp",
   "version": "0.0.0",
-  "appPath": "../webapp",
   "dependencies": {
     "angular": "1.2.15",
     "json3": "~3.2.6",
