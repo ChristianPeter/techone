@@ -109,14 +109,6 @@ $grunt serve
 
 in order to deploy only the build application to wildfly, we have to change the "dist" path at Gruntfile.js to "../webapp".
 
-Edit Gruntfile.js to enable cleaning the distribution directory outside the current one:
-
-   clean: {
-      options: { force: true },
-
-Because we won't like to have "dist" under our version control, we'll add a .gitignore line to prevent committing the webapp dir.
-
-
 $grunt build
 
 willl create this new "dist" (../webapp) directory, which then can be used with wildfly properly!
